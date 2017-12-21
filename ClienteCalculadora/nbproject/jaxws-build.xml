@@ -33,5 +33,39 @@
         <delete dir="${build.generated.dir}/jax-wsCache/ServicoCalculadora"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/servico"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-ServicoCalculadora"/>
+    <target name="wsimport-client-ServicoCalculadora_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ServicoCalculadora_1"/>
+        <property name="wsdl-ServicoCalculadora_1" location="xml-resources/web-service-references/ServicoCalculadora_1/wsdl/localhost_8080/WSCalculadora/ServicoCalculadora.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServicoCalculadora_1" destdir="${build.generated.dir}/jax-wsCache/ServicoCalculadora_1" wsdl="${wsdl-ServicoCalculadora_1}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSCalculadora/ServicoCalculadora?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-ServicoCalculadora_1}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ServicoCalculadora_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ServicoCalculadora_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ServicoCalculadora_1" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/ServicoCalculadora_1"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/servico"/>
+    </target>
+    <target name="wsimport-client-WSSituacaoAluno" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSSituacaoAluno"/>
+        <property name="wsdl-WSSituacaoAluno" location="xml-resources/web-service-references/WSSituacaoAluno/wsdl/localhost_8080/WSSituacaoAluno/WSSituacaoAluno.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSSituacaoAluno" destdir="${build.generated.dir}/jax-wsCache/WSSituacaoAluno" wsdl="${wsdl-WSSituacaoAluno}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSSituacaoAluno/WSSituacaoAluno?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-WSSituacaoAluno}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSSituacaoAluno"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSSituacaoAluno">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSSituacaoAluno" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/WSSituacaoAluno"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/servico"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-ServicoCalculadora, wsimport-client-ServicoCalculadora_1, wsimport-client-WSSituacaoAluno"/>
 </project>
