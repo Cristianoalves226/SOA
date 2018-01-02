@@ -14,10 +14,12 @@ import clientews.ServicoJurosSimples_Service;
 public class Principal {
 
     public static void main(String[] args) {
-        clientews.ServicoJurosSimples_Service service = new ServicoJurosSimples_Service();
-        clientews.ServicoJurosSimples port = service.getServicoJurosSimplesPort();
+        wsjuros.ServicoJurosSimples_Service service = new wsjuros.ServicoJurosSimples_Service();
+        wsjuros.ServicoJurosSimples port = service.getServicoJurosSimplesPort();
 
-        System.out.println("Juro e " + port.jurosSimples(1000, 0.011f, 1));
+        System.out.println("Juros é " + port.jurosSimples(1000, 0.011f, 1)*100+" reais");
+        
+        System.out.println("O montante é "+port.montante(1000, 1.1f,1));
 
     }
 }

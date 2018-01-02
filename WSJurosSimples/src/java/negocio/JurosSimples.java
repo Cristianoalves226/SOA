@@ -57,20 +57,20 @@ public class JurosSimples {
         this.periodo = periodo;
     }
 
-    public float processaJurossSimples(float C, float t, float n) {
-        setCapital(Capital);
-        setTaxa(taxa);
-        setPeriodo(periodo);
-        return juros = getCapital() * getTaxa() * getPeriodo();
+    public float processaJurossSimples(float c, float t, float n) {
+        this.taxa = t / 100;
+        return this.juros = (c * taxa * n);
     }
 
-    public float processaMontante(float C) {
-        return montante = C + getJuros();
+    public float processaMontante(float c, float t, float n) {
+        processaJurossSimples(c, t, n);
+
+        return this.montante = c + this.juros;
     }
 
     public float processaTaxa(float C, float M) {
 
-        return taxa = (M / C) - 1f;
+        return this.taxa = (M / C) - 1f;
 
     }
 

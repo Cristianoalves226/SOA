@@ -11,18 +11,18 @@ package juros;
  */
 public class JurosComposto {
 
-    private float juros;
+    private float jurosComposto;
     private float Capital;
     private float taxa;
     private float periodo;
     private float montante;
 
     public float getJuros() {
-        return juros;
+        return jurosComposto;
     }
 
     public void setJuros(float juros) {
-        this.juros = juros;
+        this.jurosComposto = juros;
     }
 
     public float getCapital() {
@@ -58,16 +58,17 @@ public class JurosComposto {
     }
 
     public float processaJurosCompostoMontante(float Capital, float taxa, float periodo) {
+
+        this.montante = (float) (Capital * (Math.pow(1 + taxa, periodo)));
         
-        montante = (float) (getCapital() * (Math.pow(1 + getTaxa(), getPeriodo())));
-        
-        return montante;
+        return this.montante;
     }
 
-    public float processaJurosComposto() {
-        float mont = getMontante();
-        juros = mont - getCapital();
-      
-        return juros;
+    public float processaJurosComposto(float Capital, float taxa, float periodo) {
+        this.montante =  (float) (Capital * (Math.pow(1 + taxa, periodo)));
+
+       this.jurosComposto = this.montante - Capital;
+
+        return this.jurosComposto;
     }
 }

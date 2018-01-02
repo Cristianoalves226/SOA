@@ -14,11 +14,15 @@ import java.text.DecimalFormat;
 public class Principal {
 
     public static void main(String[] args) {
-      
-        JurosComposto jc = new JurosComposto();
-        jc.processaJurosCompostoMontante(8000f, 0.06f, 4f);
-        jc.processaJurosComposto();
        
+        
+        DecimalFormat df = new DecimalFormat("0.####");
+        JurosComposto jc = new JurosComposto();
+       
+        jc.processaJurosCompostoMontante(8000, 0.06f, 4);
+        jc.processaJurosComposto(8000, 0.06f, 4f);
+       
+        
      
 
         System.out.println("-------------------------------");

@@ -17,28 +17,33 @@ import negocio.JurosSimples;
 @WebService(serviceName = "servicoJurosSimples")
 public class servicoJurosSimples {
 
-    JurosSimples jur = new JurosSimples();
+    private JurosSimples jurosSimples;
+
+    public servicoJurosSimples() {
+        this.jurosSimples = new JurosSimples();
+    }
+    
 
     /**
      * This is a sample web service operation
      */
     @WebMethod(operationName = "jurosSimples")
     public float processaJurossSimples(float C, float t, float n) {
-        jur.processaJurossSimples(C, t, n);
-        return jur.getTaxa();
+        this.jurosSimples.processaJurossSimples(C, t, n);
+        return this.jurosSimples.getJuros();
 
     }
 
     @WebMethod(operationName = "montante")
-    public float processaMontante(float C) {
-        jur.processaMontante(C);
-        return jur.getMontante();
+    public float processaMontante(float c, float t, float n) {
+        this.jurosSimples.processaMontante(c, t,n);
+        return this.jurosSimples.getMontante();
     }
 
     @WebMethod(operationName = "taxa")
     public float processaTaxa(float C, float M) {
-        jur.processaTaxa(C, M);
-        return jur.getTaxa();
+        this.jurosSimples.processaTaxa(C, M);
+        return this.jurosSimples.getTaxa();
 
     }
 }

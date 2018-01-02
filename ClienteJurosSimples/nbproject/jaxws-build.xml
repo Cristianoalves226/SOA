@@ -33,5 +33,22 @@
         <delete dir="${build.generated.dir}/jax-wsCache/servicoJurosSimples"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/clientews"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-servicoJurosSimples"/>
+    <target name="wsimport-client-servicoJurosSimples_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/servicoJurosSimples_1"/>
+        <property name="wsdl-servicoJurosSimples_1" location="xml-resources/web-service-references/servicoJurosSimples_1/wsdl/localhost_8080/WSJurosSimples/servicoJurosSimples.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/servicoJurosSimples_1" destdir="${build.generated.dir}/jax-wsCache/servicoJurosSimples_1" wsdl="${wsdl-servicoJurosSimples_1}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSJurosSimples/servicoJurosSimples?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-servicoJurosSimples_1}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/servicoJurosSimples_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/servicoJurosSimples_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-servicoJurosSimples_1" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/servicoJurosSimples_1"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/wsjuros"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-servicoJurosSimples, wsimport-client-servicoJurosSimples_1"/>
 </project>
