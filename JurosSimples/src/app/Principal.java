@@ -16,8 +16,9 @@ public class Principal {
     public static void main(String[] args) {
         ws.ServicoJurosComposto_Service service = new ServicoJurosComposto_Service();
         ws.ServicoJurosComposto port = service.getServicoJurosCompostoPort();
-
+        System.out.println("-----------------------JUROS COMPOSTO ----------------------");
         System.out.println("O montade é = " + port.montante(8000, 0.06f, 4));
-        System.out.println("O juros composto é = " + port.jurosComposto(8000, 0.06f, 4));
+        System.out.println("O juros produzido é = " + port.jurosComposto(8000, 0.06f, 4));
+        System.out.println("-------------------------------------------------------------");
     }
 }

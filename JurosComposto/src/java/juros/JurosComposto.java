@@ -65,13 +65,13 @@ public class JurosComposto implements Serializable{
 
     public float processaJurosCompostoMontante(float Capital, float taxa, float periodo) {
 
-        this.montante = (float) (Capital * (Math.pow(1 + taxa, periodo)));
+        this.montante = (float) (Capital * (Math.pow(1 + (taxa/100), periodo)));
         
         return this.montante;
     }
 
     public float processaJurosComposto(float Capital, float taxa, float periodo) {
-        this.montante =  (float) (Capital * (Math.pow(1 + taxa, periodo)));
+        this.montante =  (float) (Capital * (Math.pow(1 + (taxa/100), periodo)));
 
        this.jurosComposto = this.montante - Capital;
 
