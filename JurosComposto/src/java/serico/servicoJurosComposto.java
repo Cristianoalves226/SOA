@@ -7,23 +7,27 @@ package serico;
 
 import javax.jws.WebService;
 import javax.jws.WebMethod;
-
+import juros.JurosComposto;
 
 /**
  *
  * @author 02376421152
  */
-@WebService(serviceName = "servicoJurosSimples")
+@WebService(serviceName = "servicoJurosComposto")
 public class servicoJurosComposto {
 
     private juros.JurosComposto jc;
 
+    public servicoJurosComposto() {
+        this.jc = new JurosComposto();
+    }
+
     /**
      * This is a sample web service operation
-    
+     *
      */
     @WebMethod(operationName = "jurosComposto")
-    public float processaJurossSimples(float capital, float taxa, float periodo) {
+    public float processaJurosComposto(float capital, float taxa, float periodo) {
 
         jc.processaJurosComposto(capital, taxa, periodo);
         return jc.getJuros();

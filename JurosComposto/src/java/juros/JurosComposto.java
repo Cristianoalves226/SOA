@@ -5,11 +5,13 @@
  */
 package juros;
 
+import java.io.Serializable;
+
 /**
  *
  * @author 02376421152
  */
-public class JurosComposto {
+public class JurosComposto implements Serializable{
 
     private float jurosComposto;
     private float Capital;
@@ -17,6 +19,10 @@ public class JurosComposto {
     private float periodo;
     private float montante;
 
+    public JurosComposto() {
+    }
+
+    
     public float getJuros() {
         return jurosComposto;
     }
