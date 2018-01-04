@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://servico/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servico/">
+
+<xs:element name="jurosComposto" type="tns:jurosComposto"/>
+
+<xs:element name="jurosCompostoResponse" type="tns:jurosCompostoResponse"/>
+
+<xs:element name="jurosSimples" type="tns:jurosSimples"/>
+
+<xs:element name="jurosSimplesMontante" type="tns:jurosSimplesMontante"/>
+
+<xs:element name="jurosSimplesMontanteResponse" type="tns:jurosSimplesMontanteResponse"/>
+
+<xs:element name="jurosSimplesResponse" type="tns:jurosSimplesResponse"/>
+
+<xs:element name="montanteComposto" type="tns:montanteComposto"/>
+
+<xs:element name="montanteCompostoResponse" type="tns:montanteCompostoResponse"/>
+
+<xs:element name="taxa" type="tns:taxa"/>
+
+<xs:element name="taxaResponse" type="tns:taxaResponse"/>
+
+<xs:complexType name="taxa">
+<xs:sequence>
+<xs:element name="arg0" type="xs:float"/>
+<xs:element name="arg1" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="taxaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="jurosSimplesMontante">
+<xs:sequence>
+<xs:element name="arg0" type="xs:float"/>
+<xs:element name="arg1" type="xs:float"/>
+<xs:element name="arg2" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="jurosSimplesMontanteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="montanteComposto">
+<xs:sequence>
+<xs:element name="arg0" type="xs:float"/>
+<xs:element name="arg1" type="xs:float"/>
+<xs:element name="arg2" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="montanteCompostoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="jurosSimples">
+<xs:sequence>
+<xs:element name="arg0" type="xs:float"/>
+<xs:element name="arg1" type="xs:float"/>
+<xs:element name="arg2" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="jurosSimplesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="jurosComposto">
+<xs:sequence>
+<xs:element name="arg0" type="xs:float"/>
+<xs:element name="arg1" type="xs:float"/>
+<xs:element name="arg2" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="jurosCompostoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
