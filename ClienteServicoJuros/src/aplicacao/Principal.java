@@ -15,18 +15,19 @@ public class Principal {
         wsjuros.ServicoJuroSimplesComposto service = new wsjuros.ServicoJuroSimplesComposto();
         wsjuros.ServicoJuros port = service.getServicoJurosPort();
 
-        System.out.println("---------------JUROS SIMPLES---------------------------------");
-        System.out.println("Juros é " + port.jurosSimples(1000, 0.011f, 1) * 100 + " reais");
+        System.out.println("----------------------JUROS SIMPLES---------------------------");
+        System.out.println("Juros é " + port.jurosSimples(1000, 1.1f, 1) + " reais");
 
-        System.out.println("O montante é " + port.jurosSimplesMontante(1000, 0.01f, 1));
+        System.out.println("O montante é " + port.jurosSimplesMontante(1000, 1.1f, 1));
 
         System.out.println("--------------------------------------------------------------");
-        System.out.println(""); 
-        System.out.println(""); 
-        System.out.println(""); 
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------");
         System.out.println("-----------------------JUROS COMPOSTO ----------------------");
-        System.out.println("O montade é = " + port.montanteComposto(8000, 0.06f, 4));
-        System.out.println("O juros produzido é = " + port.jurosComposto(8000, 0.06f, 4));
+
+        System.out.println("O juros produzido é = " + port.jurosComposto(8000, 6, 4));
+        System.out.println("O montade é = " + port.montanteComposto(8000, 6f, 4));
         System.out.println("-------------------------------------------------------------");
     }
 
